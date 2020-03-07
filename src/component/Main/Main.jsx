@@ -8,6 +8,7 @@ export default class Main extends Component {
     state = {
         cards: [],
         searchText: "",
+        searchFilter: "",
         filteredCards: []
     }
 
