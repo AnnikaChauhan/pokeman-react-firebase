@@ -5,12 +5,6 @@ export default class SearchBar extends Component {
     render() {
         return (
             <section className={styles.searchSection} >
-                <input
-                    className={styles.search}
-                    placeholder="Search cards..."
-                    value={this.props.searchText}
-                    onChange={this.props.setSearchText}
-                />
                 <form className={styles.form} >
                     <p>Search By: </p>
                     <div>
@@ -46,6 +40,12 @@ export default class SearchBar extends Component {
                     </label>
                     </div>
                 </form>
+                <input
+                    className={styles.search}
+                    placeholder="Search cards..."
+                    value={this.props.searchText}
+                    onChange={this.props.setSearchText}
+                />
             </section>
         );
     }

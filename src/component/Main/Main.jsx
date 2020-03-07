@@ -7,9 +7,9 @@ import firebase, { firestore } from "../../firebase";
 export default class Main extends Component {
     state = {
         cards: [],
+        filteredCards: [],
         searchText: "",
-        selectedOption: "name",
-        filteredCards: []
+        selectedOption: "name"
     }
 
     setSearchText = (event) => {
@@ -66,7 +66,6 @@ export default class Main extends Component {
     }
 
     render() {
-        //console.log(this.state.selectedOption);
         return (
             <section className={styles.main}>
                 <SearchBar searchText={this.state.searchText} setSearchText={this.setSearchText} selectedOption={this.state.selectedOption} handleOptionChange={this.handleOptionChange} />
