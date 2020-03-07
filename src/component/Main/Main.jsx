@@ -30,6 +30,13 @@ export default class Main extends Component {
             })
             //console.log(filteredCards);
             this.setState({ filteredCards });
+        } else if(this.state.selectedOption === "weakness"){
+            //this one only works if you type the full weakness in
+            let filteredCards = this.state.cards.filter(card => {
+                return card.weakness.includes(this.state.searchText);
+            })
+            //console.log(filteredCards);
+            this.setState({ filteredCards });
         }
         
     }
@@ -60,7 +67,7 @@ export default class Main extends Component {
             <section className={styles.main}>
                 <SearchBar searchText={this.state.searchText} setSearchText={this.setSearchText} />
                 <form>
-                    <label>Filter By: </label>
+                    <label>Search By: </label>
                     <label>
                         <input 
                             type="radio"
@@ -80,6 +87,16 @@ export default class Main extends Component {
                             onChange={this.handleOptionChange}
                         />
                         Category
+                    </label>
+                    <label>
+                        <input 
+                            type="radio"
+                            name="filter-search"
+                            value="weakness"
+                            checked={this.state.selectedOption === "weakness"}
+                            onChange={this.handleOptionChange}
+                        />
+                        Weakness
                     </label>
                 </form>
                 <CardList cardList={this.state.filteredCards} />

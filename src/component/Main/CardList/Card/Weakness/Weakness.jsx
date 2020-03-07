@@ -7,6 +7,7 @@ export default class Weakness extends Component {
                 <h4>Weakness</h4>
                 {Object.entries(this.props.weakness).map((entry, index) => {
                     //console.log(entry);
+                    //console.log(entry[1]);
                     return <p key={index}>- {entry[1]}</p>
                 })}
             </article>
