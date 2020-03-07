@@ -33,6 +33,10 @@ export default class Main extends Component {
         } else if(this.state.selectedOption === "weakness"){
             //this one only works if you type the full weakness in
             let filteredCards = this.state.cards.filter(card => {
+                let weaknessLoop = card.weakness.filter(weakness => {
+                    return weakness.includes(this.state.searchText);
+                });
+                //console.log(weaknessLoop);
                 return card.weakness.includes(this.state.searchText);
             })
             //console.log(filteredCards);
