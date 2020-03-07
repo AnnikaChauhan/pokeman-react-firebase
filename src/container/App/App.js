@@ -6,7 +6,7 @@ import Main from "../../component/Main";
 class App extends Component {
   render() {
     return (
-      <main>
+      <main className={styles.main}>
         <Header />
         <Main />
       </main>
