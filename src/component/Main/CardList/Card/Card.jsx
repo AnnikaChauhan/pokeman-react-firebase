@@ -13,7 +13,9 @@ export default class Card extends Component {
                 <img alt={cardData.name} src={cardData.picture} />
                 <p>Category: {cardData.category}</p>
                 <p>Weight: {cardData.weight} lb</p>
+                <br/>
                 <Type type={this.props.cardData.type} />
+                <br/>
                 <Weakness weakness={this.props.cardData.weakness} />
             </article>
         );
