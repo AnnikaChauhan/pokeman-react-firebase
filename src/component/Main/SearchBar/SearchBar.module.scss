@@ -1,15 +1,9 @@
 .searchSection{
     text-align: center;
     margin: 10px;
-}
-
-.search {
-    text-align: center;
-    width: 95%;
-    border: grey solid 1px;
-    border-radius: 5px;
-    font-size: 20px;
-    height: 40px;
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
 
 .form {
@@ -32,4 +26,14 @@
             }
         }
     }
+}
+
+.search {
+    text-align: center;
+    width: 95%;
+    border: grey solid 1px;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 40px;
+    margin-bottom: 10px;
 }

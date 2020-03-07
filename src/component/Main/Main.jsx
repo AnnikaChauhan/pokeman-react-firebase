@@ -8,8 +8,8 @@ export default class Main extends Component {
     state = {
         cards: [],
         filteredCards: [],
-        searchText: "",
-        selectedOption: "name"
+        selectedOption: "name",
+        searchText: ""
     }
 
     setSearchText = (event) => {
@@ -68,7 +68,12 @@ export default class Main extends Component {
     render() {
         return (
             <section className={styles.main}>
-                <SearchBar searchText={this.state.searchText} setSearchText={this.setSearchText} selectedOption={this.state.selectedOption} handleOptionChange={this.handleOptionChange} />
+                <SearchBar 
+                    searchText={this.state.searchText} 
+                    setSearchText={this.setSearchText} 
+                    selectedOption={this.state.selectedOption} 
+                    handleOptionChange={this.handleOptionChange} 
+                />
                 <CardList cardList={this.state.filteredCards} />
             </section>
         );
