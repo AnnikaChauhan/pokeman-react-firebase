@@ -8,7 +8,7 @@ export default class Main extends Component {
     state = {
         cards: [],
         searchText: "",
-        searchFilter: "",
+        selectedOption: "name",
         filteredCards: []
     }
 
@@ -18,11 +18,26 @@ export default class Main extends Component {
     }
 
     filteredCards = () => {
-        let filteredCards = this.state.cards.filter(card => {
-            return card.name.toLowerCase().includes(this.state.searchText);
-        })
-        console.log(filteredCards);
-        this.setState({ filteredCards });
+        if(this.state.selectedOption === "name"){
+            let filteredCards = this.state.cards.filter(card => {
+                return card.name.toLowerCase().includes(this.state.searchText);
+            })
+            //console.log(filteredCards);
+            this.setState({ filteredCards });
+        } else if(this.state.selectedOption === "category"){
+            let filteredCards = this.state.cards.filter(card => {
+                return card.category.toLowerCase().includes(this.state.searchText);
+            })
+            //console.log(filteredCards);
+            this.setState({ filteredCards });
+        }
+        
+    }
+
+    handleOptionChange = (changeEvent) => {
+        this.setState({
+            selectedOption: changeEvent.target.value
+        });
     }
 
     componentDidMount() {
@@ -40,9 +55,33 @@ export default class Main extends Component {
     }
 
     render() {
+        //console.log(this.state.selectedOption);
         return (
             <section className={styles.main}>
                 <SearchBar searchText={this.state.searchText} setSearchText={this.setSearchText} />
+                <form>
+                    <label>Filter By: </label>
+                    <label>
+                        <input 
+                            type="radio"
+                            name="filter-search"
+                            value="name"
+                            checked={this.state.selectedOption === "name"}
+                            onChange={this.handleOptionChange}
+                        />
+                        Name
+                    </label>
+                    <label>
+                        <input 
+                            type="radio"
+                            name="filter-search"
+                            value="category"
+                            checked={this.state.selectedOption === "category"}
+                            onChange={this.handleOptionChange}
+                        />
+                        Category
+                    </label>
+                </form>
                 <CardList cardList={this.state.filteredCards} />
             </section>
         );
