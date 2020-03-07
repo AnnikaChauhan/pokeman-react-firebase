@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import styles from "./Card.module.scss";
+import Type from "./Type/Type";
+import Weakness from "./Weakness/Weakness";
 
 export default class Card extends Component {
     render(){
@@ -11,6 +13,8 @@ export default class Card extends Component {
                 <img alt={cardData.name} src={cardData.picture} />
                 <p>Category: {cardData.category}</p>
                 <p>Weight: {cardData.weight} lb</p>
+                <Type type={this.props.cardData.type} />
+                <Weakness weakness={this.props.cardData.weakness} />
             </article>
         );
     }
