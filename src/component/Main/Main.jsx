@@ -69,40 +69,7 @@ export default class Main extends Component {
         //console.log(this.state.selectedOption);
         return (
             <section className={styles.main}>
-                <SearchBar searchText={this.state.searchText} setSearchText={this.setSearchText} />
-                <form>
-                    <label>Search By: </label>
-                    <label>
-                        <input 
-                            type="radio"
-                            name="filter-search"
-                            value="name"
-                            checked={this.state.selectedOption === "name"}
-                            onChange={this.handleOptionChange}
-                        />
-                        Name
-                    </label>
-                    <label>
-                        <input 
-                            type="radio"
-                            name="filter-search"
-                            value="category"
-                            checked={this.state.selectedOption === "category"}
-                            onChange={this.handleOptionChange}
-                        />
-                        Category
-                    </label>
-                    <label>
-                        <input 
-                            type="radio"
-                            name="filter-search"
-                            value="weakness"
-                            checked={this.state.selectedOption === "weakness"}
-                            onChange={this.handleOptionChange}
-                        />
-                        Weakness
-                    </label>
-                </form>
+                <SearchBar searchText={this.state.searchText} setSearchText={this.setSearchText} selectedOption={this.state.selectedOption} handleOptionChange={this.handleOptionChange} />
                 <CardList cardList={this.state.filteredCards} />
             </section>
         );

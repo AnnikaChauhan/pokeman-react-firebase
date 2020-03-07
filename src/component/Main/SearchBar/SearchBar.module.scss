@@ -1,12 +1,35 @@
-.searchbar {
-    height: 40px;
+.searchSection{
+    text-align: center;
     margin: 10px;
+}
 
-    input {
-        height: 100%;
-        width: 100%;
-        border: grey solid 1px;
-        border-radius: 5px;
-        font-size: 20px;
+.search {
+    text-align: center;
+    width: 95%;
+    border: grey solid 1px;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 40px;
+}
+
+.form {
+    text-align: center;
+    margin: 5px 0;
+    
+    p {
+        margin: 5px 0;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+
+        label {
+            padding: 0 10px;
+
+            input {
+                margin-right: 2px;
+            }
+        }
     }
 }
