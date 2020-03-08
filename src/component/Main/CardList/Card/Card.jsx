@@ -11,7 +11,7 @@ export default class Card extends Component {
             <article className={styles.card}>
                 <h3>{cardData.name}</h3>
                 <img alt={cardData.name} src={cardData.picture} />
-                <p>Category: {cardData.category}</p>
+                <p>Category: {cardData.category.charAt(0).toUpperCase() + cardData.category.substr(1).toLowerCase()}</p>
                 <p>Weight: {cardData.weight} lb</p>
                 <br/>
                 <Type type={this.props.cardData.type} />

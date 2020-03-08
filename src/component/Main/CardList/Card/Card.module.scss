@@ -1,11 +1,12 @@
 .card {
     border: 1px solid grey;
     border-radius: 5px;
-    height: 450px;
+    height: 460px;
     width: 280px;
     margin: 10px;
     text-align: center;
-    overflow: scroll;
+    // overflow: scroll;
+    background-color: lightgrey;
 
     h3{
         font-size: 30px;
