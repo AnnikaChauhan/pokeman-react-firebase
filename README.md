@@ -1,3 +1,11 @@
+# Pokemon Pokedex
+This is a React App with a Firebase database attached - all data renders directly from the database. The purpose of this was to test out connections to database and also connecting the search bar. This was pretty successful as not only can you search by name but you can also search by category and weakness of the pokemon's.
+
+This app was build in React. If you clone this repo down you will need to do a 'yarn install' in the terminal in order to install all of the related packages. You can then do a 'yarn start' to view a demo version of the app as you make changes.
+
+This app is available [here](https://pokemon-52216.firebaseapp.com/).
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
